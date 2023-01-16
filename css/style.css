@@ -1,0 +1,29 @@
+fieldset{
+    width: 500px;
+    margin-left: 300px;
+    margin-top: 20px;
+    background-image:linear-gradient(to top left, rgb(238, 234, 10), rgba(246, 134, 6, 0.834));
+    color: #070404;
+    border-radius: 10px;
+    
+}
+button{
+    margin-left: 225px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-family:Georgia;
+    
+}
+h1{
+    margin-top:150px;
+    margin-left:500px;
+}
+p{
+    font-size: 20px;
+}
+textarea{
+    border-radius: 10px;
+}
+.input1,.input2,.input3,.input4{
+    border-radius: 10px;
+}
