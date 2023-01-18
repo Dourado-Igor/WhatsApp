@@ -12,7 +12,7 @@ window.onload=function(){
         }
         $.ajax({
             type:"POST",
-            url:"http://localhost/mvc/api/new",
+            url:"http://localhost/clienteapi/",
             data:datos,
             success:(dat)=>{
                 dat=JSON.parse(dat);
