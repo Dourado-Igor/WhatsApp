@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <title>Appi</title>
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>WhatsApp</h1>
-
-          <label class="form-label" for="Usuario Destino">Usuario Destino:</label><br>
-          <input class="form-input" type="text" name="Usuario Destino" /><br><br>
-
-          <label class="form-label" for="Usuario Origem">Usuario Origem:</label><br>
-          <input class="form-input" type="text" name="Usuario Origem" /><br><br>
-
-          <label class="form-label" for="Mensaje">Mensaje</label><br>
-          <input class="form-input" type="text" name="Mensaje" /><br><br>
-
-          <button class="btn btn-success">Enviar Mensaje</button>
-          <div id="respuesta"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h1>WhatsApp</h1>
+                <label class="form-label" for="">Usuario Destino</label>
+                <input class="form-control" type="number" id="idUsuarioDestino">
+                <br>
+                <label class="form-label" for="">Usuario Origen</label>
+                <input class="form-control" type="number" id="idUsuarioOrigen">
+                <br>
+                <label class="form-label" for="">Mensaje</label>
+                <input class="form-control" type="text" id="mensaje">
+                <br>
+                <button class="btn btn-success" id="btnEnviar">Enviar mensaje</button>
+                <div id="respuesta"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="cargando" class="d-none"><img src="./img/cargando.gif" alt=""></div>
+                <h2>Mensajes</h2>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Mensaje</th>
+                        <th scope="col">Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Fecha</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Fecha</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>Fecha</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
         </div>
-        <div class="col-md-6">
-          <h2>Mensajes</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Origem</th>
-                <th scope="col">Destino</th>
-                <th scope="col">Mensaje</th>
-                <th scope="col">Fecha</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Origem</td>
-                <td>Destino</td>
-                <td>Mensaje</td>
-                <td>Fecha</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Origem</td>
-                <td>Destino</td>
-                <td>Mensaje</td>
-                <td>Fecha</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Origem</td>
-                <td>Destino</td>
-                <td>Mensaje</td>
-                <td>Fecha</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+
     </div>
-  </body>
+</body>
+
 </html>
