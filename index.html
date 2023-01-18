@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>Appi</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>WhatsApp</h1>
+
+          <label class="form-label" for="Usuario Destino">Usuario Destino:</label>
+          <input class="form-input" type="text" name="Usuario Destino" />
+
+          <label class="form-label" for="Usuario Origem">Usuario Origem:</label>
+          <input class="form-input" type="text" name="Usuario Origem" />
+
+          <label class="form-label" for="Mensaje">Mensaje</label>
+          <input class="form-input" type="text" name="Mensaje" />
+
+          <button class="btn btn-success">Enviar Mensaje</button>
+          <div id="respuesta"></div>
+        </div>
+        <div class="col-md-6">
+          <h2>Mensajes</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Origem</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Mensaje</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Origem</td>
+                <td>Destino</td>
+                <td>Mensaje</td>
+                <td>Fecha</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Origem</td>
+                <td>Destino</td>
+                <td>Mensaje</td>
+                <td>Fecha</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
