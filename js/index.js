@@ -28,6 +28,8 @@ window.onload=function(){
 
     })
     $("#cargando").removeClass("d.none");
+    setTimeout(()=>{
+        console.log("Enviando peticion");    
     $.ajax({
         url:"http://192.168.100.27/mvc/api",
         success:(datos)=>{
