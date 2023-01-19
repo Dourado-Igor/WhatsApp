@@ -1,4 +1,23 @@
 window.onload=function(){
+    $("#btnLogin").click(()=>{
+        let nombre=$("#nombre").val();
+        let pass=$("#password").val();
+        let datos={
+            "nombre":$nombre,
+            "password":$password
+        }
+        $.ajax({
+            type:"POST",
+            url:"http://192.168.100.27/mvc/api/login",
+            data:datos,
+            success:(dat)=>{
+                console.log(dat);
+            },
+            error:(err)=>{
+                console.log(err);
+            }
+        })
+    })
     console.log("cargando");
     $("#btnEnviar").click(()=>{
         console.log("enviando");
@@ -12,7 +31,7 @@ window.onload=function(){
         }
         $.ajax({
             type:"POST",
-            url:"http://localhost/mvc/api/new",
+            url:"http://192.168.100.27/mvc/api/new",
             data:datos,
             success:(dat)=>{
                 dat=JSON.parse(dat);
@@ -20,6 +39,7 @@ window.onload=function(){
                 $("#idUsuarioOrigen").val("");
                 $("#idUsuarioDestino").val("");
                 $("#mensaje").val("");
+                actualizarMensajes();
             },
             error:(err)=>{
                 $("#respuesta").text(err);
@@ -27,38 +47,48 @@ window.onload=function(){
         });
 
     })
-    $("#cargando").removeClass("d-none");
-    setTimeout(()=>{
-        console.log("Enviando peticion");
-        $.ajax({
-            url:"http://192.168.100.27/mvc/api",
-            success:(datos)=>{
-                let mensajes=JSON.parse(datos);
-                let fila="";
-                for (let index = 0; index < mensajes.length; index++) {
-                    const mensaje = mensajes[index];
-                    let msg=`<tr>
-                    <th scope="row">${mensaje.id}</th>
-                    <td>${mensaje.id_usuario_origen}</td>
-                    <td>${mensaje.id_usuario_destino}</td>
-                    <td>${mensaje.mensaje}</td>
-                    <td>${mensaje.fecha_envio}</td>
-                    <td><i id="msg${mensaje.id}" class="fa-solid fa-trash eliminarMensaje"></i></td>
-                  </tr>`;
-                  fila+=msg;
-                }
-                $("#cargando").addClass("d-none");
-                $("#tbody").html(fila);
-                $(".eliminarMensaje").click((t)=>{
-                    let idMensaje=t.currentTarget.id.substring(3);
-                    
-                })
-
-            },
-            error:(err)=>{
-                console.log(err);
-            }
-        })
-    },3000)
     
+  actualizarMensajes();
+    
+}
+
+function actualizarMensajes(){
+    $("#spinner").removeClass("d-none");
+    $.ajax({
+        url:"http://192.168.100.27/mvc/api",
+        success:(datos)=>{
+            let mensajes=JSON.parse(datos);
+            let fila="";
+            for (let index = 0; index < mensajes.length; index++) {
+                const mensaje = mensajes[index];
+                let msg=`<tr>
+                <th scope="row">${mensaje.id}</th>
+                <td>${mensaje.id_usuario_origen}</td>
+                <td>${mensaje.id_usuario_destino}</td>
+                <td>${mensaje.mensaje}</td>
+                <td>${mensaje.fecha_envio}</td>
+                <td><i id="msg${mensaje.id}" class="fa-solid fa-trash eliminarMensaje"></i></td>
+              </tr>`;
+              fila+=msg;
+            }
+            $("#spinner").addClass("d-none");
+            $("#tbody").html(fila);
+            $(".eliminarMensaje").click((t)=>{
+                let idMensaje=t.currentTarget.id.substring(3);
+                $.ajax({
+                    url:"http://192.168.100.27/mvc/api/delete/"+idMensaje,
+                    success:(resp)=>{
+                        actualizarMensajes();
+                    },
+                    error:()=>{
+
+                    }
+                })
+            })
+
+        },
+        error:(err)=>{
+            console.log(err);
+        }
+    })
 }

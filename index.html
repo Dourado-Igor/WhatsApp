@@ -6,18 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <style>
-        #cargando {
-            position: absolute;
-            top: 200px;
-            opacity: 0.5;
-            left: 25%;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -38,10 +32,11 @@
                 <button class="btn btn-success" id="btnEnviar">Enviar mensaje</button>
                 <div id="respuesta"></div>
             </div>
-            <div class="col-md-6" style="position:relative">
-                <div id="cargando" class=""><img src="./img/cargando.gif" alt=""></div>
+            <div class="col-md-6">
+                <div><img id="spinner" src="./img/spinner.gif" alt=""></div>
                 <h2>Mensajes</h2>
                 <table class="table">
+                   
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -50,28 +45,35 @@
                             <th scope="col">Mensaje</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Operaciones</th>
+                            
+                            
                         </tr>
                     </thead>
                     <tbody id="tbody">
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>Origem</td>
+                            <td>Destino</td>
+                            <td>Mensaje</td>
                             <td>Fecha</td>
+                            <td>Operaciones</td>
+                            
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Origem</td>
+                            <td>Destino</td>
+                            <td>Mensaje</td>
                             <td>Fecha</td>
+                            <td>Operaciones</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>Origem</td>
+                            <td>Destino</td>
+                            <td>Mensaje</td>
                             <td>Fecha</td>
+                            <td>Operaciones</td>
                         </tr>
                     </tbody>
                 </table>
